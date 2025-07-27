@@ -1,0 +1,131 @@
+@use '../foundation' as *;
+
+.c-works-item {
+  padding: prem(50) prem(40) 0 prem(40);
+  display: inline-block;
+
+  @include mq("md") {
+    padding-top: prem(30);
+    display: block;
+  }
+
+  & a {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: prem(50);
+    border-bottom: 1px solid #e2e2e2;
+
+    @include mq("md") {
+      padding-bottom: prem(30);
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__img {
+    aspect-ratio: 290 / 229;
+    margin-right: prem(50);
+
+    @include mq("md") {
+      aspect-ratio: 120 / 90;
+      margin-right: prem(18);
+      min-width: prem(120);
+    }
+  }
+
+  &__category {
+    background-color: #f3f3f3;
+
+    @include mq("md") {
+      font-size: prem(10);
+      line-height: calc(12 / 10);
+    }
+  }
+
+  &__title {
+    font-size: prem(24);
+    margin-top: prem(30);
+    font-weight: $medium;
+
+    @include mq("md") {
+      font-size: prem(14);
+      margin-top: prem(14);
+      line-height: calc(28 / 14);
+    }
+  }
+
+  &__text {
+    font-size: prem(16);
+    color: $color-text;
+    margin-top: prem(36);
+    line-height: calc(38 / 16);
+
+    @include mq("md") {
+      display: none;
+    }
+  }
+
+  &-date {
+    margin-top: prem(17);
+
+    @include mq("md") {
+      font-size: prem(10);
+    }
+  }
+
+  &--archive {
+    display: inline-block;
+    margin-left: prem(60);
+    padding: 0;
+
+    @include mq('md') {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    + .c-works-item--archive {
+      padding-top: prem(30);
+    }
+
+    .c-works-item__content {
+      position: relative;
+    }
+
+    & a {
+      padding-bottom: prem(30);
+  
+      @include mq("md") {
+        padding-bottom: prem(20);
+      }
+    }
+
+    .c-works-item__img {
+      aspect-ratio: 160 / 160;
+      margin-right: prem(30);
+      max-width: prem(160);
+  
+      @include mq("md") {
+        aspect-ratio: 130 / 100;
+        margin-right: prem(15);
+        min-width: prem(130);
+      }
+    }
+
+    .c-works-item__title {
+      font-size: prem(18);
+  
+      @include mq("md") {
+        font-size: prem(14);
+        margin-bottom: prem(20);
+      }
+    }
+
+    .c-works-item__date {
+      position: absolute;
+      bottom: 0;
+      margin-top: 0;
+    }
+  }
+}

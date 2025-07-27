@@ -1,0 +1,35 @@
+@use '../foundation' as *;
+
+.c-sub-section-title {
+
+  &__inner {
+    max-width: prem(890);
+  }
+
+  & h2 {
+    font-size: prem(40);
+    line-height : calc(60 / 40);
+    font-weight: $medium;
+
+    @include mq('md') {
+      font-size: prem(18);
+      line-height : calc(37 / 18);
+    }
+  }
+
+  & p {
+    margin-top: prem(40);
+    line-height: 2.3em;
+
+    @include mq('md') {
+      margin-top: prem(30);
+      font-size: prem(14);
+    }
+
+    & br {
+      @include mq('md') {
+        display: none;
+      }
+    }
+  }
+}

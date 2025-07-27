@@ -1,0 +1,103 @@
+@use "../foundation" as *;
+
+.p-404 {
+  margin-top: prem(330);
+  margin-bottom: prem(120);
+
+  @include mq("md") {
+    margin-top: prem(120);
+    margin-bottom: prem(80);
+  }
+
+  &__wrap {
+    height: vw(1440, 600);
+    width: vw(1440, 1270);
+    margin-left: auto;
+
+    @include mq('md') {
+      height: 100%;
+      width: vw(375,365);
+    }
+  }
+
+  &__img-wrap {
+    position: relative;
+    height: vw(1440, 600);
+    width: vw(1440, 1270);
+    margin-left: auto;
+
+    @include mq("md") {
+      height: 100%;
+      width: vw(375,365);
+    }
+  }
+
+  &__title {
+    font-size: prem(70);
+    color: #fff;
+    line-height: calc(104 / 70);
+    text-transform: capitalize;
+    font-family: Oswald;
+    font-weight: $bold;
+    position: absolute;
+    top: prem(168);
+    left: vw(1440,555);
+    z-index: 20;
+
+    @include mq("md") {
+      font-size: prem(35);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: prem(208);
+      width: 100%;
+      right: auto;
+      bottom: auto;
+    }
+  }
+
+  &__text {
+    line-height: calc(38 / 16);
+    color: #fff;
+    position: absolute;
+    top: prem(292);
+    left: vw(1440,555);
+    max-width: prem(509);
+    width: 100%;
+    font-weight: $medium;
+
+    @include mq("md") {
+      position: static;
+      color: $color-black;
+      font-size: prem(14);
+      font-weight: $regular;
+      padding: prem(40) prem(22) prem(40) prem(8);
+      margin: 0 auto;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: prem(388);
+    left: vw(1440,555);
+
+    @include mq("md") {
+      position: static;
+      text-align: center;
+    }
+  }
+
+  picture {
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      @include mq("md") {
+        aspect-ratio: 365/243;
+      }
+    }
+  }
+}

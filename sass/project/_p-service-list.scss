@@ -1,0 +1,77 @@
+@use "../foundation" as *;
+
+.p-service__title {
+  text-align: right;
+
+  @include mq('md') {
+    text-align: left;
+  }
+}
+
+.p-service-list {
+  margin-top: prem(40);
+  display: grid;
+  row-gap: prem(30);
+  column-gap: prem(18);
+  grid-template-columns: repeat(3, 1fr);
+  counter-reset: point;
+
+  @include mq('md') {
+    margin-top: prem(20);
+    grid-template-columns: 1fr;
+  }
+
+  &__item-img {
+    position: relative;
+    color: #fff;
+    font-weight: $bold;
+
+    & img {
+      aspect-ratio: 355/170;
+    }
+  }
+
+  &__item-number {
+    position: absolute;
+    top: prem(50);
+    left: prem(30);
+    font-family: oswald;
+    text-transform: capitalize;
+
+    &::after {
+      counter-increment: point;
+      content: "0" counter(point);
+    }
+  }
+
+  &__item-subtitle {
+    position: absolute;
+    top: prem(83);
+    left: prem(30);
+    font-size: prem(26);
+  }
+
+  &__item-content {
+    max-width: prem(335);
+    width: 100%;
+
+    @include mq('md') {
+      max-width: none;
+    }
+  }
+
+  &__item-text {
+    line-height: calc(38 / 16);
+    margin-top: prem(20);
+
+    @include mq('md') {
+      font-size: prem(14);
+      line-height : calc(32 / 14);
+    }
+  }
+
+  &__item-btn {
+    margin-top: prem(20);
+    text-align: right;
+  }
+}

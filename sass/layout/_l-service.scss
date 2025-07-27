@@ -1,0 +1,11 @@
+@use '../foundation' as *;
+
+.l-service {
+  margin-top: prem(120);
+  margin-bottom: prem(120);
+
+  @include mq('md') {
+    margin-top: prem(80);
+    margin-bottom: prem(80);
+  }
+}

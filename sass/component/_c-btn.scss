@@ -1,0 +1,227 @@
+@use "../foundation" as *;
+
+.c-btn {
+  padding: prem(14) prem(39) prem(14) prem(24);
+  position: relative;
+  display: inline-block;
+  font-size: prem(14);
+  font-weight: $medium;
+  font-family: roboto;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid $color-navy;
+  border-radius: 4px;
+  color: $color-navy;
+  transition: 0.3s;
+
+  @include mq("md") {
+    letter-spacing: 0.01em;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: prem(17.5);
+    width: prem(8);
+    height: prem(8);
+    border-top: prem(2) solid $color-navy;
+    border-right: prem(2) solid $color-navy;
+    transform: translateY(-50%) rotate(45deg);
+    transition: 0.3s;
+  }
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-navy;
+  }
+
+  &:hover::before {
+    right: prem(15);
+    border-color: $color-white;
+  }
+
+
+  &--prev {
+    padding-right: prem(24);
+    padding-left: prem(39);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: prem(17.5);
+      width: prem(8);
+      height: prem(8);
+      border-top: prem(2) solid $color-navy;
+      border-right: prem(2) solid $color-navy;
+      transform: translateY(-50%) rotate(-135deg);
+      transition: 0.3s;
+    }
+
+    &:hover::before {
+      left: prem(15);
+      border-color: $color-white;
+    }
+  }
+
+  &--works-detail {
+    padding-right: prem(86);
+    padding-left: prem(101);
+    font-family: Noto Sans JP;
+    font-weight: $medium;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: prem(86);
+      width: prem(8);
+      height: prem(8);
+      border-top: prem(2) solid $color-navy;
+      border-right: prem(2) solid $color-navy;
+      transform: translateY(-50%) rotate(-135deg);
+      transition: 0.3s;
+    }
+
+    &:hover::before {
+      left: prem(82);
+      border-color: $color-white;
+    }
+  }
+
+  &--contact-prev {
+    padding: prem(20) prem(178.5);
+    font-family: Noto Sans JP;
+    font-weight: $medium;
+    background-color: $color-navy;
+    color: $color-white;
+    font-size: prem(18);
+
+    @include mq("md") {
+      padding: prem(11.5) prem(95) prem(11.5) prem(110);
+      font-size: prem(14);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: prem(165);
+      width: prem(8);
+      height: prem(8);
+      border-top: prem(2) solid $color-white;
+      border-right: prem(2) solid $color-white;
+      transform: translateY(-50%) rotate(-135deg);
+      transition: 0.3s;
+
+      @include mq("md") {
+        left: prem(95);
+      }
+    }
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-navy;
+
+      &::before {
+        left: prem(160);
+        border-color: $color-navy;
+  
+        @include mq("md") {
+          left: prem(90);
+        }
+      }
+    }
+    
+  }
+
+
+
+  &--404 {
+    border-color: $color-white;
+    color: $color-white;
+    padding: prem(12) prem(30) prem(12) prem(45);
+
+    @include mq('md') {
+      color: $color-navy;
+      border-color: $color-navy;
+    }
+
+    &:hover {
+      background: none;
+      @include mq('md') {
+        color: $color-white;
+        background-color: $color-navy;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: prem(30);
+      width: prem(8);
+      height: prem(8);
+      border-top: prem(2) solid $color-white;
+      border-right: prem(2) solid $color-white;
+      transform: translateY(-50%) rotate(-135deg);
+      transition: 0.3s;
+
+      @include mq('md') {
+        border-color: $color-navy;
+      }
+    }
+
+    &:hover::before {
+      left: prem(25);
+    }
+  }
+
+  &--box-none {
+    border: none;
+    padding-right: prem(15);
+    padding-bottom: prem(4);
+
+    &:hover {
+      color: $color-navy;
+      background-color: transparent;
+    }
+
+    &:hover::before {
+      right: prem(-5);
+      border-color: $color-navy;
+    }
+
+    &::before {
+      right: 0;
+      top: unset;
+      bottom: 12%;
+    }
+
+    &::after {
+      position: absolute;
+      justify-content: center;
+      content: "";
+      width: 70%;
+      height: 1px;
+      background: $color-navy;
+      bottom: 0;
+      left: 17%;
+      transform: scale(0, 1);
+      transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の右端*/
+      transition: transform 0.3s;
+    }
+
+    &:hover::after {
+      transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
+      transform-origin: left top; /*左から右に向かう*/
+      transition: transform 0.3s;
+    }
+  }
+
+  &--japanese {
+    font-family: Noto Sans JP;
+  }
+}

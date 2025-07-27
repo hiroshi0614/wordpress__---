@@ -1,0 +1,75 @@
+@use '../foundation' as *;
+
+.p-works-detail {
+
+
+  &__inner {
+    max-width: prem(840);
+    margin: 0 auto;
+    padding: 0 $padding-pc;
+
+    @include mq('md') {
+      padding: 0 prem(30);
+    }
+  }
+
+  &__title {
+    font-size: prem(26);
+    font-weight: $medium;
+    margin-top: prem(20);
+    line-height : calc(31 / 21);
+
+    @include mq('md') {
+      line-height : calc(30 / 18);
+      font-size: prem(18);
+      margin-top: prem(10);
+    }
+  }
+
+  &__date {
+    margin-top: prem(15);
+    display: block;
+
+    @include mq('md') {
+      font-size: prem(10);
+    }
+  }
+
+  &__img {
+    margin-top: prem(43);
+
+    @include mq('md') {
+      margin-top: prem(34);
+    }
+  }
+
+  &__text {
+    max-width: prem(680);
+    margin: prem(40) auto 0;
+
+    p {
+      line-height : calc(32 / 16);
+
+      @include mq('md') {
+        font-size: prem(14);
+      }
+
+    }
+
+    p + p {
+
+      @include mq('md') {
+        margin-top: prem(40);
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: prem(60);
+    text-align: center;
+
+    @include mq('md') {
+      margin-top: prem(40);
+    }
+  }
+}

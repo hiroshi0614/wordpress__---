@@ -1,0 +1,149 @@
+@use "../foundation" as *;
+
+.p-sub-service {
+  &__inner {
+    max-width: prem(1250);
+    margin: 0 auto;
+    padding: 0 $padding-pc;
+    counter-reset: number; 
+
+    @include mq("md") {
+      padding: 0;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    background-color: $color-gray;
+    justify-content: space-between;
+
+    @include mq("md") {
+      flex-direction: column;
+      padding: 0 prem(20);
+    }
+  }
+
+  &__title {
+    margin-top: prem(117);
+    font-size: prem(28);
+
+    @include mq("md") {
+      margin-top: prem(60);
+    }
+
+    &::before {
+      counter-increment: number;
+      content: "0" counter(number);
+      font-family: Oswald;
+      margin-bottom: prem(25);
+      display: block;
+      font-size: prem(40);
+      line-height: 1;
+      color: $color-navy;
+      border-right: 1px solid $color-navy;
+      max-width: prem(54);
+      width: 100%;
+      @include mq(md) {
+        font-size: prem(32);
+        max-width: prem(41);
+        margin-bottom: prem(20);
+      }
+    }
+  }
+
+  &__item {
+    margin-left: prem(50);
+    margin-right: prem(20);
+
+    @include mq("md") {
+      margin: 0;
+    }
+  }
+
+  &__img {
+    max-width: prem(640);
+    width: 100%;
+    @include mq("md") {
+      max-width: none;
+    }
+
+    & img {
+      width: 100%;
+      aspect-ratio: 640/500;
+      object-fit: cover;
+
+      @include mq("md") {
+        aspect-ratio: 335/220;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: prem(27);
+    margin-bottom: prem(110);
+    line-height: calc(46 / 22);
+    font-size: prem(22);
+    font-weight: $medium;
+    max-width: prem(400);
+    width: 100%;
+    @include mq("md") {
+      margin-top: prem(20);
+      margin-bottom: prem(20);
+      font-size: prem(14);
+    }
+  }
+
+  &__features {
+    max-width: prem(1100);
+    margin: prem(30) auto 0 auto;
+
+    @include mq("md") {
+      padding: 0 prem(20);
+    }
+
+    &-title {
+      font-size: prem(22);
+      font-weight: $medium;
+      line-height: calc(33 / 22);
+      text-transform: uppercase;
+      font-family: Oswald;
+      display: flex;
+      align-items: center;
+
+      @include mq('md') {
+        font-size: prem(18);
+      }
+
+      & p {
+        display: flex;
+        align-items: center;
+      }
+
+      & span {
+        font-size: prem(12);
+        margin-left: prem(16);
+
+        @include mq('md') {
+          font-size: prem(10);
+        }
+      }
+    }
+
+    &-text {
+      margin-top: prem(20);
+      line-height: 2.3em;
+
+      @include mq('md') {
+        font-size: prem(14);
+      }
+    }
+  }
+
+  &__list + .p-sub-service__list {
+    margin-top: prem(120);
+
+    @include mq('md') {
+      margin-top: prem(50);
+    }
+  }
+}

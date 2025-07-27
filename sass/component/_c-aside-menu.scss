@@ -1,0 +1,79 @@
+@use '../foundation' as *;
+
+.c-aside-menu {
+  background-color: $color-navy;
+  width: prem(300);
+  padding: prem(15) 0  prem(15) prem(18);
+
+  @include mq('md') {
+    width: 100%;
+  }
+
+  &__wrap {
+    padding-bottom: prem(40);
+  }
+
+  &__title {
+    color: $color-white;
+    width: 100%;
+    font-weight: $medium;
+
+    @include mq('md') {
+      font-size: prem(14);
+    }
+  }
+
+  &__list {
+    border-bottom: solid 1px #E4E4E4;
+    margin: 0 prem(18);
+
+    &:last-child {
+      @include mq('md') {
+        border: none;
+      }
+    }
+
+    a {
+      padding: prem(18) 0;
+      display: flex;
+
+
+      position: relative;
+    }
+
+    &--filter {
+      display: block;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    img {
+      aspect-ratio:  100/100 ;
+      max-width: prem(100);
+      width: 100%;
+    }
+  }
+
+  &__lists li:last-child .c-aside-menu__list--filter{
+    border-bottom: none;
+  }
+
+  &__text {
+    font-size: prem(12);
+    margin-bottom: prem(14);
+    line-height : calc(24 / 12);
+    display: block;
+
+    &-wrap {
+      padding-left: prem(18);
+    }
+  }
+
+  &__date {
+    font-size: prem(10);
+    position: absolute;
+    bottom: prem(18);
+  }
+}

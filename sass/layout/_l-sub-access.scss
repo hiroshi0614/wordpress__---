@@ -1,0 +1,9 @@
+@use '../foundation' as *;
+
+.l-sub-access {
+  margin: prem(120) 0;
+
+  @include mq('md') {
+    margin: prem(80) 0;
+  }
+}

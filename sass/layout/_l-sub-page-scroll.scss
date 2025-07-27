@@ -1,0 +1,9 @@
+@use '../foundation' as *;
+
+.l-sub-page-scroll {
+  margin-top: prem(60);
+
+  @include mq('md') {
+    margin-top: prem(30);
+  }
+}

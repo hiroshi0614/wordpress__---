@@ -1,0 +1,82 @@
+@use "../foundation" as *;
+
+.p-sub-company {
+  background-color: $color-gray;
+
+  &-profile {
+    margin-top: prem(60);
+
+    &__list {
+      padding-bottom: prem(40);
+      display: flex;
+      font-size: prem(16);
+      line-height: 1.3;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid #e2e2e2;
+      @include mq(md) {
+        padding-bottom: prem(20);
+        font-size: prem(14);
+        flex-direction: column;
+      }
+    }
+
+    &__list + .p-sub-company-profile__list {
+      margin-top: prem(40);
+      @include mq(md) {
+        margin-top: prem(20);
+      }
+    }
+
+    &__term {
+      max-width: prem(170);
+      width: 100%;
+      flex-shrink: 0;
+      font-weight: $medium;
+      @include mq(md) {
+        max-width: prem(140);
+        padding-bottom: prem(16);
+      }
+    }
+
+    &__description {
+      & p + p {
+        margin-top: prem(24);
+
+        @include mq(md) {
+          margin-top: prem(10);
+        }
+      }
+    }
+  }
+
+  &__swiper {
+    margin: prem(120) 0;
+
+    @include mq("md") {
+      margin: prem(80) 0;
+    }
+
+    & .swiper-wrapper {
+      transition-timing-function: linear;
+    }
+
+    & .swiper-slide {
+      width: prem(480);
+      margin-left: prem(10);
+
+      @include mq("md") {
+        min-width: prem(180);
+        margin-left: prem(4);
+      }
+
+        & img {
+          aspect-ratio: 480/400;
+          object-fit: cover;
+
+          @include mq("md") {
+          aspect-ratio: 180/150;
+        }
+      }
+    }
+  }
+}

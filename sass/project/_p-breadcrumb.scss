@@ -1,0 +1,46 @@
+@use "../foundation" as *;
+
+.p-breadcrumb__inner {
+  text-align: right;
+  padding: 0 prem(60);
+  @include mq(md) {
+    padding: 0 prem(10);
+  }
+}
+
+.p-breadcrumb span {
+  font-size: prem(15);
+  font-weight: $medium;
+  font-family: roboto;
+  text-transform: capitalize;
+  color: #a9a9a9;
+
+  @include mq(md) {
+    font-size: prem(10);
+  }
+}
+
+.p-breadcrumb .prev-item::before {
+
+    content: "";
+    display: inline-block;
+    width: prem(20);
+    height: 1px;
+    background-color: #a9a9a9;
+    margin: 0 prem(10);
+    vertical-align: middle;
+}
+
+.p-breadcrumb .current-item {
+  color: #242424;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: prem(20);
+    height: 1px;
+    background-color: #a9a9a9;
+    margin: 0 prem(10);
+    vertical-align: middle;
+  }
+}

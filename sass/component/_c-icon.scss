@@ -1,0 +1,9 @@
+@use '../foundation' as *;
+
+.c-icon__mail {
+  color: $color-white;
+  width: prem(22);
+  height: prem(17.6);
+  margin-right: prem(10);
+  padding-top: prem(2);
+}

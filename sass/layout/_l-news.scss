@@ -1,0 +1,11 @@
+@use '../foundation' as *;
+
+.l-news {
+  margin-top: prem(120);
+  padding-bottom: prem(120);
+
+  @include mq('md') {
+    margin-top: prem(80);
+    padding-bottom: prem(72);
+  }
+}

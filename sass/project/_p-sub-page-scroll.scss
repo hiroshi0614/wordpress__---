@@ -1,0 +1,44 @@
+@use '../foundation' as *;
+
+.p-sub-page-scroll {
+
+
+    &__inner {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: prem(136);
+      color: $color-navy;
+
+      @include mq('md') {
+        gap: prem(54.7);
+      }
+    }
+
+    &__text {
+      position: relative;
+
+      @include mq('md') {
+        font-size: prem(12);
+      }
+
+      &::after{
+        content: '';
+        width: 6px;
+        height: 6px;
+        border: 0;
+        border-bottom: solid 1px $color-navy;
+        border-right: solid 1px $color-navy;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 0;
+        right: prem(-16);
+        bottom: 0;
+        margin: auto;
+
+        @include mq('md') {
+          right: prem(-10);
+        }
+      }
+    }
+}

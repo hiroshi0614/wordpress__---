@@ -1,0 +1,419 @@
+@use "../foundation" as *;
+
+.p-sub-contact {
+  margin-top: prem(60);
+  margin-bottom: prem(120);
+
+  @include mq("md") {
+    margin-top: prem(30);
+    margin-bottom: prem(80);
+  }
+
+  &__inner {
+    margin: auto;
+    padding: 0 prem(10);
+    max-width: prem(660);
+    width: 100%;
+    @include mq(md) {
+      padding: 0 prem(20);
+      max-width: prem(1200);
+    }
+
+    &--confirm {
+      max-width: prem(700);
+    }
+  }
+
+  &__text {
+    line-height: calc(38 / 16);
+  }
+
+  &__form {
+    margin-top: prem(100);
+    @include mq(md) {
+      margin-top: prem(40);
+      max-width: prem(800);
+      width: 100%;
+    }
+
+    &-wrap + &-wrap {
+      margin-top: prem(40);
+    }
+
+    &-label {
+      font-size: prem(15);
+      line-height: 1;
+      font-weight: $medium;
+    }
+
+    &-required {
+      display: inline-block;
+      color: #e20000;
+    }
+
+    &-text {
+      font-weight: $regular;
+      margin-left: prem(20);
+    }
+
+    &-input {
+      margin-top: prem(14);
+
+      input,
+      select {
+        padding: prem(10);
+        width: 100%;
+        font-size: prem(16);
+        line-height: 1;
+        border-radius: 0;
+        border: prem(2) solid #e0e0e0;
+        appearance: none;
+        background-color: transparent;
+        background-image: none;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          color: rgba($color: #333, $alpha: 0.5);
+        }
+      }
+    }
+
+    &-select {
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 6px 0 6px;
+        border-color: #333 transparent transparent transparent;
+        position: absolute;
+        top: 0;
+        right: prem(15);
+        bottom: 0;
+        margin: auto;
+      }
+    }
+
+    &-radio {
+      margin-top: prem(10);
+
+      label:not(:first-of-type) {
+        margin-left: prem(15);
+      }
+
+      input {
+        display: none;
+
+        + span {
+          padding: 0 0 0 prem(25);
+          position: relative;
+          display: inline-block;
+          font-size: prem(18);
+          line-height: 1;
+          cursor: pointer;
+
+          &::before {
+            content: "";
+            width: prem(18);
+            height: prem(18);
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background: #fff;
+            border: 1px solid #808080;
+            border-radius: 50%;
+          }
+
+          &::after {
+            content: "";
+            padding: prem(2);
+            width: prem(10);
+            height: prem(10);
+            position: absolute;
+            top: 50%;
+            left: prem(4);
+            transform: translateY(-50%);
+            border: 1px solid transparent;
+            border-radius: 50%;
+            background: #333;
+            opacity: 0;
+            transition: 0.3s;
+          }
+        }
+
+        &:checked + span::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    &-textarea {
+      margin-top: prem(10);
+
+      textarea {
+        padding: prem(10);
+        width: 100%;
+        height: prem(160);
+        font-size: prem(16);
+        border-radius: 0;
+        border: prem(2) solid #e0e0e0;
+        appearance: none;
+        background-color: transparent;
+        background-image: none;
+        resize: none;
+
+        &:focus {
+          box-shadow: none;
+          outline: none;
+        }
+
+        &::placeholder {
+          color: rgba($color: #333, $alpha: 0.5);
+        }
+      }
+    }
+
+    &-privacy {
+      margin-top: prem(30);
+
+      input {
+        display: none;
+
+        + span {
+          cursor: pointer;
+          display: inline-block;
+          padding: 0 0 0 prem(40);
+          position: relative;
+          font-size: prem(16);
+          line-height: 1.5;
+          letter-spacing: 0.08em;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: prem(2);
+            left: 0;
+            background: #fff;
+            border: 1px solid #808080;
+            display: block;
+            width: prem(20);
+            height: prem(20);
+          }
+
+          &::after {
+            content: "";
+            margin-top: prem(-2);
+            position: absolute;
+            top: prem(8);
+            left: prem(2);
+            transform: rotate(-45deg);
+            display: block;
+            width: prem(15);
+            height: prem(8);
+            border-bottom: prem(3) solid #333;
+            border-left: prem(3) solid #333;
+            transition: 0.3s;
+            opacity: 0;
+          }
+        }
+
+        &:checked + span::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    &-submit {
+      margin-top: prem(43);
+      text-align: center;
+
+      input {
+        padding: prem(20) prem(178);
+        color: #fff;
+        display: inline-block;
+        font-size: prem(18);
+        font-weight: $regular;
+        line-height: 1;
+        background-color: $color-navy;
+        background-image: none;
+        border: solid 1px $color-navy;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: 0.3s;
+        @include mq(md) {
+          padding: prem(25) prem(100);
+        }
+
+        &:hover {
+          background-color: #fff;
+          color: $color-navy;
+        }
+
+        &::-moz-foucus-inner {
+          padding: 0;
+          border: none;
+        }
+      }
+    }
+
+    &-confirm {
+      margin-top: prem(100);
+      @include mq("md") {
+        margin-top: prem(40);
+      }
+
+      &-wrap {
+        display: flex;
+
+        @include mq("md") {
+          flex-direction: column;
+        }
+
+        & + & {
+          margin-top: prem(45);
+
+          @include mq("md") {
+            margin-top: prem(33);
+          }
+        }
+
+        dd {
+          font-size: prem(14);
+          @include mq("md") {
+            margin-top: prem(14);
+          }
+        }
+      }
+
+      &-label {
+        font-size: prem(15);
+        font-weight: $medium;
+        max-width: prem(192);
+        width: 100%;
+      }
+
+      &-input {
+        font-weight: $regular;
+      }
+
+      &-textarea {
+        line-height : calc(32 / 14);
+      }
+
+      &-submit input {
+        padding: prem(20) prem(107);
+        background-color: $color-navy;
+        border: solid 1px $color-navy;
+        color: #fff;
+        border-radius: 4px;
+        transition: all 0.3s;
+        font-weight: $medium;
+
+        @include mq("md") {
+          border-width: 2px;
+          padding: prem(9) prem(45.5);
+          font-size: prem(14);
+        }
+
+        &:hover {
+          background-color: #fff;
+          transition: all 0.3s;
+          color: $color-navy;
+        }
+      }
+    }
+
+    &-btn-wrap {
+      margin-top: prem(40);
+      display: flex;
+      column-gap: prem(80);
+
+      @include mq("md") {
+        column-gap: prem(23);
+        justify-content: center;
+      }
+    }
+
+    &-return input {
+      padding: prem(20) prem(123);
+      background-color: #fff;
+      border: solid 1px $color-navy;
+      border-radius: 4px;
+      transition: all 0.3s;
+
+      @include mq("md") {
+        border-width: 2px;
+        padding: prem(9) prem(59.5);
+        font-size: prem(14);
+      }
+
+      &:hover {
+        background-color: $color-navy;
+        color: #fff;
+        transition: all 0.3s;
+      }
+    }
+  }
+
+  &__thanks {
+
+    &-title {
+      font-family: Oswald;
+      font-size: prem(40);
+      font-weight: $bold;
+
+      @include mq('md') {
+        font-size: prem(24);
+      }
+    }
+
+    &-subtitle {
+      font-size: prem(18);
+      font-weight: $medium;
+      margin-top: prem(20);
+
+      @include mq('md') {
+        font-size: prem(14);
+        margin-top: prem(10);
+      }
+    }
+
+    &-text {
+      font-size: prem(16);
+      line-height : calc(38 / 16);
+      font-weight: $regular;
+      margin-top: prem(44);
+
+      @include mq('md') {
+        font-size: prem(14);
+        margin-top: prem(30);
+        line-height : calc(32 / 14);
+      }
+
+      br {
+        display: none;
+
+        @include mq('md') {
+          display: block;
+        }
+      }
+    }
+
+    &-btn {
+      text-align: center;
+      margin-top: prem(40);
+    }
+  }
+
+  &--thanks {
+    margin-top: prem(70);
+  }
+}

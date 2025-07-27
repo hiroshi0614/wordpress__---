@@ -1,0 +1,9 @@
+@use '../foundation' as *;
+
+.l-sub-company {
+  padding-top: prem(70);
+
+  @include mq('md') {
+    padding-top: prem(60);
+  }
+}

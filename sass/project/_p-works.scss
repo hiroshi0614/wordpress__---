@@ -1,0 +1,39 @@
+@use "../foundation" as *;
+
+.p-works {
+  &__inner {
+    max-width: prem(1150);
+    margin: 0 auto;
+    padding: 0 $padding-pc;
+
+    @include mq("md") {
+      padding: 0;
+    }
+  }
+
+  &__wrap {
+    margin-top: prem(40);
+    background-color: #fff;
+
+    @include mq("md") {
+      margin-top: prem(20);
+    }
+  }
+
+  &__title {
+    @include mq('md') {
+      padding: 0 prem(20); 
+    }
+  }
+
+  &-list__item {
+    &-btn {
+      text-align: right;
+      padding: prem(40) prem(40) prem(50) 0;
+  
+      @include mq("md") {
+        padding-bottom: prem(80);
+      }
+    }
+  }
+}

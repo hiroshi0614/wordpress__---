@@ -1,0 +1,103 @@
+@use "../foundation" as *;
+
+.c-category-list {
+  position: sticky;
+  top: 200px;
+  z-index: 10;
+
+  @include mq("md") {
+    display: grid;
+    width: fit-content;
+    column-gap: prem(88);
+    row-gap: prem(15);
+    grid-template-columns: repeat(
+      2,
+      max-content
+    ); // 各列の幅を最大テキストに合わせる
+    grid-auto-flow: row; // 行方向に流す（1,2,3,4→1 2／3 4）
+    justify-items: start; // 各セルの左端を揃える
+    margin-left: prem(14);
+  }
+
+  &__wrap {
+    border-right: 1px solid #e2e2e2;
+    max-width: prem(264);
+    width: 100%;
+
+    @include mq("md") {
+      border-right: none;
+      max-width: none;
+      padding-bottom: prem(40);
+      border-bottom: 1px solid #e2e2e2;
+    }
+
+    &--works {
+      @include mq("md") {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__item + .c-category-list__item {
+    margin-top: prem(23);
+
+    @include mq("md") {
+      margin-top: 0;
+    }
+  }
+
+  &__text {
+    font-size: prem(14);
+    font-weight: $medium;
+    line-height: calc(17 / 14);
+    color: #a9a9a9;
+    transition: 0.3s all ease;
+    position: relative;
+    margin-left: prem(20);
+    cursor: pointer;
+
+    @include mq("md") {
+      font-size: prem(12);
+      margin-left: 0;
+    }
+
+    &.active {
+      color: #000;
+      transition: 0.3s all ease;
+
+      &::before {
+        content: "";
+        width: prem(8);
+        height: prem(8);
+        background-color: #001e63;
+        position: absolute;
+        left: prem(-12);
+        top: prem(6);
+
+        @include mq("md") {
+          top: prem(4);
+        }
+      }
+    }
+  }
+
+  &--sub-news {
+    @include mq("md") {
+      column-gap: prem(54);
+    }
+  }
+
+  &--news {
+    padding-top: prem(45);
+    position: relative;
+    top: 0;
+
+    @include mq("md") {
+      padding-top: prem(40);
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: prem(40);
+      row-gap: prem(15);
+    }
+  }
+}

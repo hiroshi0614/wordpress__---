@@ -1,0 +1,11 @@
+@use "../foundation" as *;
+
+.c-date {
+  font-size: prem(12);
+  font-weight: $bold;
+  color: #a9a9a9;
+
+  @include mq("md") {
+    font-size: prem(10);
+  }
+}

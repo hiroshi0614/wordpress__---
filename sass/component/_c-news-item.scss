@@ -1,0 +1,88 @@
+@use "../foundation" as *;
+
+.c-news-item {
+  border-bottom: 1px solid #e2e2e2;
+
+  a {
+    display: block;
+    padding-bottom: prem(34);
+
+    @include mq("md") {
+      padding-bottom: prem(20);
+    }
+  }
+
+  & + .c-news-item {
+    margin-top: prem(30);
+  }
+
+  &__meta {
+    display: flex;
+
+    @include mq("md") {
+      margin-top: prem(20);
+    }
+  }
+
+  &__date {
+    margin-top: prem(3);
+    margin-right: prem(29);
+
+    @include mq("md") {
+      margin-right: prem(12);
+    }
+  }
+
+  &__category {
+    background-color: #fff;
+
+    @include mq("md") {
+      font-size: prem(10);
+    }
+
+    & + .c-news-item__category {
+      margin-left: prem(20);
+    }
+  }
+
+  &__title {
+    margin-top: prem(26);
+    font-weight: $medium;
+    position: relative;
+    display: inline-block;
+    @include mq("md") {
+      margin-top: prem(20);
+      font-size: prem(14);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: #000;
+      transition: width 0.3s ease;
+    }
+  }
+
+  // li要素にホバーした時にtitleに下線を表示
+  &:hover {
+    .c-news-item__title::after {
+      width: 100%;
+    }
+  }
+
+  &--archive {
+    .c-news-item__date {
+      display: flex;
+      align-items: center;
+
+      @include mq("md") {
+        font-size: prem(10);
+        line-height: calc(12 / 10);
+      }
+    }
+  }
+}

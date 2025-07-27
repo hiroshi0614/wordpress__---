@@ -1,0 +1,9 @@
+@use '../foundation' as *;
+
+.l-sub-philosophy {
+  margin-top: prem(120);
+
+  @include mq('md') {
+    margin-top: prem(80);
+  }
+}

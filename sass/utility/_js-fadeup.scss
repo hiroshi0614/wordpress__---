@@ -1,0 +1,57 @@
+@use '../foundation' as *;
+
+/* フェードイン(初期値) */
+.js-fadeUp__right {
+  opacity: 0; /* 最初は非表示 */
+  transform: translateX(30px); /* `右に30pxの位置から */
+  transition: opacity .8s, transform .8s; /* 透過率と縦方向の移動を0.8秒 */
+}
+/* フェードイン(スクロールした後) */
+.js-fadeUp__right.is-inview {
+  opacity: 1; /* 表示領域に入ったら表示 */
+  transform: translateX(0); /* 30px左に移動する */
+  transition-delay: .5s; 
+}
+
+/* フェードイン(初期値) */
+.js-fadeUp__left {
+  opacity: 0; /* 最初は非表示 */
+  transform: translateX(-30px); /* 左に30pxの位置から */
+  transition: opacity .8s, transform .8s; /* 透過率と縦方向の移動を0.8秒 */
+}
+/* フェードイン(スクロールした後) */
+.js-fadeUp__left.is-inview {
+  opacity: 1; /* 表示領域に入ったら表示 */
+  transform: translateX(0); /* 30px右に移動する */
+  transition-delay: .5s; 
+}
+
+/* フェードイン(初期値) */
+.js-fadeUp__top {
+  opacity: 0; /* 最初は非表示 */
+  transform: translateY(-30px); /* `上に30pxの位置から */
+  transition: opacity .8s, transform .8s; /* 透過率と縦方向の移動を0.8秒 */
+}
+/* フェードイン(スクロールした後) */
+.js-fadeUp__top.is-inview {
+  opacity: 1; /* 表示領域に入ったら表示 */
+  transform: translateY(0); /* 30px下に移動する */
+  transition-delay: .5s; 
+}
+
+/* フェードイン(初期値) */
+.js-fadeUp__bottom {
+  opacity: 0; /* 最初は非表示 */
+  transform: translateY(30px); /* `下に30pxの位置から */
+  transition: opacity .8s, transform .8s; /* 透過率と縦方向の移動を0.8秒 */
+}
+/* フェードイン(スクロールした後) */
+.js-fadeUp__bottom.is-inview {
+  opacity: 1; /* 表示領域に入ったら表示 */
+  transform: translateY(0); /* 30px上に移動する */
+  transition-delay: .5s; 
+}
+
+.is-inview.delay {
+  transition-delay: .9s;
+}

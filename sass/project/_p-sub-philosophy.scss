@@ -1,0 +1,80 @@
+@use '../foundation' as *;
+
+.p-sub-philosophy {
+
+  &__inner {
+    max-width: $inner;
+    margin: 0 auto;
+    padding: 0 $padding-pc;
+  
+    @include mq('md') {
+      padding: 0;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    background-color: $color-gray;
+
+    @include mq('md') {
+      flex-direction: column;
+      padding: 0 prem(20);
+    }
+  }
+
+  &__title {
+    margin-top: prem(70);
+
+    @include mq('md') {
+      margin-top: prem(60);
+    }
+  }
+
+  &__item {
+    max-width: prem(680);
+    width: 100%;
+    margin: 0 prem(30);
+
+    @include mq('md') {
+      margin: 0;
+    }
+  }
+
+  &__img  {
+    max-width: prem(360);
+
+    @include mq('md') {
+      margin: prem(30) auto 0 auto;
+    }
+
+    & img {
+      width: 100%;
+      aspect-ratio:  360/535 ;
+      object-fit: cover;
+
+      @include mq('md') {
+        aspect-ratio: 335/300;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: prem(60);
+    line-height : 2.2em;
+
+    @include mq('md') {
+      margin-top: prem(30);
+      font-size: prem(14);
+    }
+  }
+
+  &__name {
+    margin-top: prem(40);
+    text-align: right;
+
+    @include mq('md') {
+      margin-top: prem(30);
+      font-size: prem(14);
+    }
+  }
+}

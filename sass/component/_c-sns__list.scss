@@ -1,0 +1,16 @@
+@use '../foundation' as *;
+
+.c-sns__list {
+  display: flex;
+  align-items: center;
+  margin-left: prem(46);
+
+  @include mq('md') {
+    margin-left: 0;
+    margin-top: prem(52);
+  }
+
+  &-icon + .c-sns__list-icon {
+    margin-left: prem(20);
+  }
+}

@@ -1,0 +1,33 @@
+@use "../foundation" as *;
+
+.p-sub-news {
+  font-family: "Noto Sans JP";
+
+  &__inner {
+    display: flex;
+
+    @include mq("md") {
+      flex-direction: column;
+      padding: 0 prem(40);
+    }
+  }
+}
+
+.p-sub-news__wrap {
+  max-width: prem(836);
+  width: 100%;
+}
+
+.p-sub-news-list {
+  margin-left: prem(60);
+  @include mq("md") {
+    margin-left: 0;
+  }
+
+  &-btn {
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+    margin-top: prem(40);
+  }
+}

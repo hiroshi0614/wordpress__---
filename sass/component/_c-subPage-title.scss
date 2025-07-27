@@ -1,0 +1,41 @@
+@use '../foundation' as *;
+
+.c-subPage-title {
+  font-family: Oswald;
+  font-size: prem(40);
+  position: relative;
+  display: inline-block;
+  text-transform: capitalize;
+  line-height : calc(59 / 40);
+
+  @include mq('md') {
+    font-size: prem(26);
+    line-height : calc(39 / 26);
+  }
+
+  & span {
+    font-size: prem(16);
+    font-family: Noto Sans JP;
+    color: $color-navy;
+    display: block;
+
+    @include mq('md') {
+      font-size: prem(12);
+  }
+}
+
+  &::after {
+    content: "";
+    width: prem(60);
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    top: 54px;
+    right: prem(-80);
+
+    @include mq('md') {
+      top: 35px;
+      right: prem(-70);
+    }
+  }
+}

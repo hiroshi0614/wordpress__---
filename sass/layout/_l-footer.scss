@@ -1,0 +1,9 @@
+@use '../foundation' as *;
+
+.l-footer {
+  padding: prem(64) 0;
+
+  @include mq('md') {
+    padding: prem(62) 0 prem(32) 0;
+  }
+}

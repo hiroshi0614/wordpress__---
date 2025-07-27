@@ -1,0 +1,38 @@
+@use '../foundation' as *;
+
+.p-sub-access {
+
+  &__address {
+    font-style: normal;
+    margin-top: prem(8);
+
+    @include mq('md') {
+      font-size: prem(14);
+      margin-top: prem(20);
+    }
+
+    & br {
+      display: none;
+
+      @include mq('md') {
+        display: block;
+      } 
+    }
+  }
+
+  &__map {
+    margin-top: prem(64);
+    height: prem(400);
+
+    @include mq('md') {
+      margin-top: prem(20);
+    }
+
+
+    & iframe {
+      max-width: prem(1100);
+      width: 100%;
+      height: prem(400);
+    }
+  }
+}

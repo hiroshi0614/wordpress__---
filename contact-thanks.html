@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>ExciteCode Automobile</title>
+    <!-- ファビコン -->
+    <link rel="icon" href="images/common/favicon.svg" type="image/svg+xml">    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    >
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    >
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+  </head>
+  <body>
+    <header class="p-header l-header">
+      <div class="p-header__inner">
+        <h1 class="p-header__logo">
+          <a href="index.html">
+            <img src="./images/common/logo_1.png" alt="ExciteCode Automobile ロゴ">
+          </a>
+        </h1>
+        <nav class="p-header__nav">
+          <ul class="p-header__nav-list">
+            <li class="p-header__nav-item u-underline__black">
+              <a href="index.html">top</a>
+            </li>
+            <li class="p-header__nav-item u-underline__black">
+              <a href="about.html">about</a>
+            </li>
+            <li class="p-header__nav-item u-underline__black">
+              <a href="service.html">service</a>
+            </li>
+            <li class="p-header__nav-item u-underline__black">
+              <a href="works.html">works</a>
+            </li>
+            <li class="p-header__nav-item u-underline__black">
+              <a href="news.html">news</a>
+            </li>
+            <li
+              class="p-header__nav-item p-header__nav-item--contact u-underline__white"
+            >
+              <a href="contact.html">
+                <span>
+                  <i class="fa-regular fa-envelope c-icon__mail"></i>
+                  contact
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <button class="p-header__hamburger js-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="p-header__drawer js-drawer">
+          <div class="p-header__drawer-logo">
+            <a href="index.html">
+              <img src="./images/common/logo_2.png" alt="ExciteCode Automobile ロゴ（サブ）">
+            </a>
+          </div>
+          <nav class="p-header__drawer-nav">
+            <ul class="p-header__drawer-list">
+              <li class="p-header__drawer-item">
+                <a href="index.html">top</a>
+              </li>
+              <li class="p-header__drawer-item">
+                <a href="about.html">about</a>
+              </li>
+              <li class="p-header__drawer-item">
+                <a href="service.html">service</a>
+              </li>
+              <li class="p-header__drawer-item">
+                <a href="works.html">works</a>
+              </li>
+              <li class="p-header__drawer-item">
+                <a href="news.html">news</a>
+              </li>
+              <li class="p-header__drawer-item">
+                <a href="contact.html">contact</a>
+              </li>
+              <li class="p-header__drawer-item">
+                <a href="#">プライバシーポリシー</a>
+              </li>
+            </ul>
+            <div class="c-sns__list">
+              <a href="#" class="c-sns__list-icon">
+                <img src="images/common/facebook.svg" alt="facebookアイコン">
+              </a>
+              <a href="#" class="c-sns__list-icon">
+                <img src="images/common/twitter.svg" alt="twitterアイコン">
+              </a>
+              <a href="#" class="c-sns__list-icon">
+                <img src="images/common/instagram.svg" alt="instagramアイコン">
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="c-sub-mv">
+          <div class="c-sub-mv__inner">
+            <h2 class="c-sub-mv__title js-fadeUp__left delay">
+              contact<span>お問い合わせ</span>
+            </h2>
+            <div class="c-sub-mv__img js-fadeUp__bottom">
+              <picture>
+                <source
+                  srcset="./images/common/contact_FV.png"
+                  media="(min-width: 768px)"
+                  type="image/jpg"
+                >
+                <!-- 幅768px以上なら表示 -->
+                <img
+                  src="./images/common/contact__FV-sp.png"
+                  alt="コンタクトページ"
+                >
+                <!-- それ以外で表示 -->
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="p-breadcrumb l-breadcrumb">
+        <div class="p-breadcrumb__inner">
+          <!-- Breadcrumb NavXTで出力される部分 ここから -->
+          <span>
+            <a href="index.html">
+              <span>top</span>
+            </a>
+          </span>
+
+          <span>
+            <a href="contact.html">
+              <span class="prev-item">contact</span>
+            </a>
+          </span>
+
+          <span>
+            <a href="contact-confirm.html">
+              <span class="prev-item">confirm</span>
+            </a>
+          </span>
+
+          <span>
+            <span class="current-item">complete</span>
+          </span>
+          <!-- Breadcrumb NavXTで出力される部分 ここまで -->
+        </div>
+      </div>
+
+      <section>
+        <div class="p-sub-contact p-sub-contact--thanks">
+          <div class="p-sub-contact__inner">
+            <h2 class="p-sub-contact__thanks-title">
+              THANK YOU FOR CONTACTING US.
+            </h2>
+            <p class="p-sub-contact__thanks-subtitle">
+              お問い合わせありがとうございます。
+            </p>
+            <p class="p-sub-contact__thanks-text">
+              近日中に折り返しご連絡いたします。<br>今しばらくお待ちくださいますよう、よろしくお願い申し上げます。<br>万が一、ご回答メールが届かない場合は、送信トラブル等の可能性もありますので、大変お手数ではございますが、もう一度フォームよりお問い合わせいただくか、お電話にてお問い合わせをお願いいたします。<br>今後ともご愛顧賜りますようよろしくお願い申し上げます。
+            </p>
+            <div class="p-sub-contact__thanks-btn">
+              <a href="index.html" class="c-btn c-btn--contact-prev">
+                TOPへ戻る
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+
+      <div class="l-footer p-footer">
+        <div class="p-footer__inner">
+          <div class="p-footer__left">
+            <div class="p-footer__left-wrap">
+              <div class="p-footer__logo">
+                <a href="#">
+                  <img src="images/common/logo_2.png" alt="ExciteCode Automobile ロゴ（サブ）">
+                </a>
+              </div>
+              <div class="c-sns__list">
+                <a href="#" class="c-sns__list-icon">
+                  <img
+                    src="images/common/facebook.svg"
+                    alt="facebookアイコン"
+                  >
+                </a>
+                <a href="#" class="c-sns__list-icon">
+                  <img src="images/common/twitter.svg" alt="twitterアイコン">
+                </a>
+                <a href="#" class="c-sns__list-icon">
+                  <img
+                    src="images/common/instagram.svg"
+                    alt="instagramアイコン"
+                  >
+                </a>
+              </div>
+            </div>
+            <p class="p-footer__copyright">©2022 ExciteCode Automobile</p>
+          </div>
+          <div class="p-footer__right">
+            <nav class="p-footer__nav">
+              <ul class="p-footer__nav-items">
+                <li class="p-footer__nav-item">
+                  <a href="index.html">top</a>
+                </li>
+                <li class="p-footer__nav-item">
+                  <a href="about.html">about</a>
+                </li>
+                <li class="p-footer__nav-item">
+                  <a href="service.html">service</a>
+                </li>
+                <li class="p-footer__nav-item">
+                  <a href="works.html">works</a>
+                </li>
+                <li class="p-footer__nav-item">
+                  <a href="news.html">news</a>
+                </li>
+                <li class="p-footer__nav-item">
+                  <a href="contact.html">contact</a>
+                </li>
+                <li class="p-footer__nav-item">
+                  <a href="#">プライバシーポリシー</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./js/jquery.inview.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

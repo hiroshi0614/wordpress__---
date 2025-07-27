@@ -1,0 +1,16 @@
+@use '../foundation' as *;
+
+.c-section-title {
+  font-family: $font-family-oswald;
+  font-weight: $bold;
+  text-transform: capitalize;
+  font-size: prem(70);
+  color: $color-black;
+  line-height : calc(104 / 70);
+  display: inline-block;
+
+  @include mq('md') {
+    font-size: prem(38);
+    line-height : calc(56 / 38);
+  }
+}

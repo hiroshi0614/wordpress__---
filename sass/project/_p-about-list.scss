@@ -1,0 +1,68 @@
+@use "../foundation" as *;
+
+.p-about-list {
+  counter-reset: number;
+}
+
+.p-about-list__item {
+  display: flex;
+  justify-content: center;
+
+  @include mq('md') {
+    flex-direction: column;
+  }
+}
+
+.p-about-list__item + .p-about-list__item {
+  margin-top: prem(100);
+}
+
+.p-about-list__item-img {
+  width: 100%;
+  max-width: prem(550);
+
+  @include mq('md') {
+    max-width: none;
+  }
+}
+
+.p-about-list__item-img img {
+  width: 100%;
+  aspect-ratio: 550/480;
+  object-fit: cover;
+}
+
+.p-about-list__item-text-wrap {
+  max-width: prem(490);
+  width: 100%;
+  margin-top: prem(70);
+  margin-left: prem(60);
+
+  @include mq('md') {
+    margin-top: prem(30);
+    margin-left: 0;
+    max-width: none;
+  }
+}
+
+.p-about-list__item-title {
+  font-size: prem(14);
+  text-transform: capitalize;
+  font-family: oswald;
+}
+
+.p-about-list__item-text {
+  line-height : calc(38 / 16);
+  margin-top: prem(40);
+  font-size: prem(16);
+
+  @include mq('md') {
+    margin-top: prem(30);
+    font-size: prem(14);
+  }
+}
+
+.p-about-list__item-btn {
+  text-align: right;
+  margin-top: prem(40);
+}

@@ -1,0 +1,30 @@
+@use "../foundation" as *;
+
+.l-two-column {
+  display: flex;
+  column-gap: prem(140);
+  margin: prem(60) auto 0 auto;
+  max-width: prem(1440);
+  padding: 0 prem(141) prem(120);
+
+  @include mq('md') {
+    flex-direction: column;
+    margin: prem(30) auto;
+    padding: 0 prem(15);
+  }
+
+  &__main {
+    max-width: prem(718);
+    width: 100%;
+  }
+
+  &__aside {
+    max-width: prem(300);
+    width: 100%;
+
+    @include mq('md') {
+      max-width: none;
+      margin-top: prem(60);
+    }
+  }
+}

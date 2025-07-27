@@ -1,0 +1,22 @@
+@use "../foundation" as *;
+
+.p-sub-works {
+  font-family: "Noto Sans JP";
+
+  &__inner {
+    display: flex;
+
+    @include mq("md") {
+      flex-direction: column;
+      padding: 0 prem(40);
+    }
+  }
+}
+
+.p-sub-works {
+  &__wrap {
+    max-width: prem(836);
+    width: 100%;
+    }
+
+}

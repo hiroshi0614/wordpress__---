@@ -1,0 +1,11 @@
+@use '../foundation' as *;
+
+.l-sub-works {
+  margin-top: prem(60);
+  padding-bottom: prem(120);
+
+  @include mq('md') {
+    margin-top: prem(30);
+    padding-bottom: prem(90);
+  }
+}

@@ -1,0 +1,154 @@
+@use "../foundation" as *;
+
+.p-news-detail {
+  padding: 0 prem(15);
+
+  &__title {
+    margin-top: prem(20);
+
+    @include mq('md') {
+      margin-top: prem(9);
+    }
+
+    h2 {
+      font-size: prem(26);
+      font-weight: $medium;
+      line-height: calc(50 / 26);
+
+      @include mq('md') {
+        font-size: prem(18);
+        letter-spacing: 0.02em;
+        line-height : calc(30 / 18);
+      }
+    }
+  }
+
+  &__date {
+    margin-top: prem(20);
+  }
+
+  &__img {
+    margin-top: prem(40);
+
+    img {
+      aspect-ratio: 718 / 380;
+
+      @include mq('md') {
+        aspect-ratio:  315/176 ;
+      }
+    }
+  }
+
+  &__content {
+
+    padding-bottom: prem(44);
+    border-bottom: solid 1px #E2E2E2;
+
+    @include mq('md') {
+      border: none;
+      padding-bottom: 0;
+    }
+
+    h2 {
+      margin-top: prem(40);
+      background-color: #f8f9f9;
+      font-size: prem(22);
+      border-left: solid 3px $color-navy;
+      padding: prem(8) 0 prem(14) prem(14);
+      font-weight: $medium;
+
+      @include mq('md') {
+        font-size: prem(16);
+        padding: prem(8) 0 prem(9) prem(8);
+      }
+    }
+
+    h3 {
+      margin-top: prem(72);
+      font-weight: $medium;
+      padding: 0 0 prem(10) prem(14);
+      border-bottom: solid 1px #e4e4e4;
+      position: relative;
+
+      @include mq('md') {
+        margin-top: prem(40);
+        font-size: prem(18);
+      }
+
+      &::before {
+        position: absolute;
+        content: " ";
+        display: block;
+        border-bottom: solid 1px $color-navy;
+        bottom: -1px;
+        left: 0;
+        width: prem(285);
+
+        @include mq('md') {
+          width: prem(125);
+        }
+      }
+    }
+
+    p {
+      margin-top: prem(40);
+      line-height: calc(32 / 16);
+
+      @include mq('md') {
+        font-size: prem(14);
+      }
+    }
+
+    ul {
+      margin-top: prem(72);
+
+      @include mq('md') {
+        margin-top: prem(22);
+      }
+    }
+
+    li {
+      position: relative;
+      padding-left: prem(16);
+      line-height : calc(19 / 16);
+
+      @include mq('md') {
+        font-size: prem(14);
+      }
+
+      &::before {
+        position: absolute;
+        top: 0.5em;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        content: "";
+        border-radius: 4px;
+        background-color: $color-navy;
+
+        @include mq('md') {
+          width: 6px;
+          height: 6px;
+          top: 0.4em;
+        }
+      }
+
+      +li {
+        margin-top: prem(8);
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: prem(40);
+    padding-right: prem(10.7);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @include mq('md') {
+      margin-top: prem(48);
+    }
+    
+  }
+}

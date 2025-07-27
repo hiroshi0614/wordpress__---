@@ -1,0 +1,42 @@
+@use '../foundation' as *;
+
+.c-category {
+  font-size: prem(11);
+  padding: prem(4) prem(18);
+  display: inline-block;
+  color: $color-text;
+  font-weight: $medium;
+
+  @include mq('md') {
+    font-size: prem(10);
+    padding: prem(5) prem(15);
+    line-height : calc(12 / 10);
+  }
+
+  &--news {
+    background-color: #F3F3F3;
+    color: #626262;
+
+    @include mq('md') {
+      font-size: prem(10);
+    }
+
+    & + .c-category--news {
+      margin-left: prem(17);
+
+      @include mq('md') {
+        margin-left: prem(2);
+      }
+    }
+  }
+
+  &--works {
+    background-color: #f3f3f3;
+
+    @include mq("md") {
+      font-size: prem(10);
+      line-height: calc(12 / 10);
+      vertical-align: top;
+    }
+  }
+}

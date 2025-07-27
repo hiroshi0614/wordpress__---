@@ -1,0 +1,69 @@
+@use "../foundation" as *;
+
+.p-mv {
+  position: relative;
+  z-index: 5;
+  height: 100vh;
+
+  @include mq('md') {
+    height: vw(375 , 480); 
+  }
+}
+
+.p-mv__inner {
+  height: inherit;
+  min-height: inherit;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-left: prem(80);
+
+  @include mq('md') {
+    flex-direction: column-reverse;
+    margin-left: 0;
+  }
+}
+
+.p-mv__title-wrap {
+  color: $color-black;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin-top: prem(194);
+  margin-left: prem(70);
+  margin-right: prem(80);
+
+  @include mq('md') {
+    writing-mode: horizontal-tb;
+    margin-top: prem(20);
+    margin-left: prem(10);
+    margin-right: 0;
+  }
+}
+
+.p-mv__main-title {
+    font-size: vw(1440, 60);
+
+    @include mq('md') {
+      font-size: vw(375 , 34);
+    }
+}
+
+.p-mv__swiper {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.p-mv__swiper,
+.p-mv__swiper .swiper-img,
+.p-mv__swiper .swiper-img img {
+  height: inherit;
+  min-height: inherit;
+}
+
+.p-mv__swiper .swiper-img img {
+  width: 71.805vw;
+  object-fit: cover;
+
+  @include mq('md') {
+    width: vw(375 , 355);
+  }
+}

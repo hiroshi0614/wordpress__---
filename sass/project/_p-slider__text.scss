@@ -1,0 +1,53 @@
+@use "../foundation" as *;
+
+.p-slider__text {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  margin-inline: calc(50% - 50vw);
+}
+
+.p-slider__text-content {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: prem(180);
+  font-weight: $bold;
+  color: $color-navy;
+  line-height : calc(180 / 150);
+  margin-top: prem(60);
+
+  @include mq('md') {
+    font-size: prem(84);
+    margin-top: prem(28);
+  }
+
+  &:nth-child(odd) {
+    animation: MoveLeft 24s -12s infinite linear; //24秒かけて-12秒後に無限ループさせる
+  }
+
+  &:nth-child(even) {
+    animation: MoveLeft2 24s infinite linear; //24秒かけて無限ループさせる
+  }
+
+  & p {
+    margin-right: prem(50);
+  }
+}
+
+@keyframes MoveLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes MoveLeft2 {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
